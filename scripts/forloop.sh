@@ -13,6 +13,13 @@ echo '---- for loop 2 ---'
 	do
 		echo $i
 	done
+
+echo '---- for loop 3 looping through passwd and showing each users groups ---'
+	
+	for user in $(cut -d ':' -f1 /etc/passwd)
+	do
+		groups $user
+	done
 else
 	echo 'script needs at least one argument'
 fi
